@@ -17,4 +17,7 @@ public class LoginPage {
     @FindBy(xpath = "Narasimha")
     WebElement name;
 
+    @FindBy(xpath = "Narasimha")
+    WebElement name1;
+
 }
