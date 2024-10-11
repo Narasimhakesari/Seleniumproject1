@@ -11,6 +11,8 @@ public class CommonTest {
         WebDriver driver;
         driver = new ChromeDriver();
         LoginPage loginPage = new LoginPage(driver);
+
+
     }
 
 }
