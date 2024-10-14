@@ -29,7 +29,7 @@ public class CommonTest {
         driver.get("https://parabank.parasoft.com/parabank/index.htm");
 
     }
-    @Test
+    @Test(priority = 2)
     public  void testLoginWithWrongInfo()
     {
         homePage = new HomePage(driver);
@@ -40,9 +40,10 @@ public class CommonTest {
         Assert.assertEquals("The username and password could not be verified.", homePage.loginError.getText());
     }
 
-    @Test
+    @Test(priority = 1)
     public void registerAccount()
     {
+        homePage = new HomePage(driver);
         homePage.register();
         registerPage = new RegisterPage(driver);
 

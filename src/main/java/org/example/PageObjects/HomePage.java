@@ -30,7 +30,7 @@ public class HomePage {
     @FindBy(linkText = "Forgot login info?")
     WebElement forgotLoginInfo;
 
-    @FindBy(css = "Register")
+    @FindBy(linkText = "Register")
     WebElement register;
 
     @FindBy(css = ".error")
