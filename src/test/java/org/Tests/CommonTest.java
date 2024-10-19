@@ -1,11 +1,9 @@
-package org.example.Tests;
+package org.Tests;
 
-import org.example.PageObjects.HomePage;
-import org.example.PageObjects.LoginPage;
-import org.example.PageObjects.RegisterPage;
+import org.PageObjects.HomePage;
+import org.PageObjects.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
