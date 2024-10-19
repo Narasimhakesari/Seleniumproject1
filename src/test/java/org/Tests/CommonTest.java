@@ -59,6 +59,12 @@ public class CommonTest {
 
     }
 
+    @Test
+    public void loginAccount()
+    {
+
+    }
+
     @AfterMethod
     public void tearDown()
     {
