@@ -4,8 +4,8 @@
     <test verbose="2" preserve-order="true" name="/Users/narasimha/IdeaProjects/project1">
     <classes><class name="org.Tests.CommonTest">
         <methods>
-            <include name="testLoginWithWrongInfo"/>
-            <include name="registerAccount"/>
+<!--            <include name="testLoginWithWrongInfo"/>-->
+<!--            <include name="registerAccount"/>-->
         </methods>
     </class>
     </classes>

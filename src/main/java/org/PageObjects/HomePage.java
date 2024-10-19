@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.List;
+
 public class HomePage {
     private static final Logger log = LoggerFactory.getLogger(HomePage.class);
     WebDriver driver;
@@ -36,6 +38,9 @@ public class HomePage {
     @FindBy(css = ".error")
     public WebElement loginError;
 
+    @FindBy(css = "ul.leftmenu li")
+    public List<WebElement> leftMenu;
+
     public void register()
     {
         register.click();
@@ -56,6 +61,15 @@ public class HomePage {
     {
         loginBtn.click();
     }
+
+    public void leftMenucontains()
+    {
+        for(WebElement a: leftMenu)
+        {
+            System.out.println(a.getText());
+        }
+    }
+
 
 }
 

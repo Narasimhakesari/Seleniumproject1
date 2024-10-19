@@ -60,9 +60,10 @@ public class CommonTest {
     }
 
     @Test
-    public void loginAccount()
+    public void leftMenulinks()
     {
-
+        homePage = new HomePage(driver);
+        homePage.leftMenucontains();
     }
 
     @AfterMethod
