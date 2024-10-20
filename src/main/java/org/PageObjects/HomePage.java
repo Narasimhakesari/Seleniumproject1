@@ -10,7 +10,7 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 
 public class HomePage {
-    private static final Logger log = LoggerFactory.getLogger(HomePage.class);
+
     WebDriver driver;
 
     public HomePage(WebDriver driver)
@@ -41,9 +41,11 @@ public class HomePage {
     @FindBy(css = "ul.leftmenu li")
     public List<WebElement> leftMenu;
 
-    public void register()
+    public RegisterPage register()
     {
         register.click();
+        RegisterPage registerPage = new RegisterPage(driver);
+        return registerPage;
     }
 
     public void setUserName(String userName1)

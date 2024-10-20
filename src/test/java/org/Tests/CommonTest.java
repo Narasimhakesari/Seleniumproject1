@@ -14,62 +14,41 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class CommonTest {
-    WebDriver driver;
+    private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     HomePage homePage;
-    RegisterPage registerPage;
+
+    public String browserName1 = "chrome";
+    public void selectchrome(String browserName)
+    {
+        if(browserName1.equals(browserName))
+        {
+            driver.set(new ChromeDriver());
+        }
+
+    }
+
+    public static WebDriver getDriver()
+    {
+        return driver.get();
+    }
+
     @BeforeMethod
-    public void before()
+    public HomePage before()
     {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.get("https://parabank.parasoft.com/parabank/index.htm");
-
-    }
-    @Test(priority = 2)
-    public  void testLoginWithWrongInfo()
-    {
-        homePage = new HomePage(driver);
-        homePage.setUserName("narasimha");
-        homePage.setPassword("kesari");
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(homePage.loginError));
-        Assert.assertEquals("The username and password could not be verified.", homePage.loginError.getText());
+        selectchrome("chrome");
+        getDriver().manage().window().maximize();
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
+        getDriver().get("https://parabank.parasoft.com/parabank/index.htm");
+        homePage = new HomePage(getDriver());
+        return homePage;
     }
 
-    @Test(priority = 1)
-    public void registerAccount()
-    {
-        homePage = new HomePage(driver);
-        homePage.register();
-        registerPage = new RegisterPage(driver);
-
-        registerPage.setFirstName("Narasimha");
-        registerPage.setLastName("Kesari");
-        registerPage.setAddress("Vijayawada, Andhra Pradesh");
-        registerPage.setCity("Vijayawada");
-        registerPage.setState("Andhra Pradesh");
-        registerPage.setZipCode("520113");
-        registerPage.setPhnNumber("7729962889");
-        registerPage.setSsnNumber("87482");
-        registerPage.setUserName("naru");
-        registerPage.setPassword("Narasimha@26");
-        registerPage.setConfirmPassword("Narasimha@26");
-
-    }
-
-    @Test
-    public void leftMenulinks()
-    {
-        homePage = new HomePage(driver);
-        homePage.leftMenucontains();
-    }
 
     @AfterMethod
     public void tearDown()
     {
-        driver.close();
+        getDriver().close();
     }
 
 }
