@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="methods" thread-count="2" name="All Test Suite">
+<suite name="All Test Suite">
     <test  verbose="2" preserve-order="true" name="/Users/narasimha/IdeaProjects/project1">
     <classes>
         <class  name="org.Tests.Tester1">

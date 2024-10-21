@@ -10,22 +10,22 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Tester1 extends CommonTest{
+public class RegisterAndLogin extends CommonTest{
 
 
 
-    @Test(enabled = false)
+    @Test(enabled = true, dependsOnMethods ={"registerAccount"} )
     public  void testLoginWithWrongInfo()
     {
 
-        homePage.setUserName("narasimha");
-        homePage.setPassword("kesari");
+        homePage.setUserName("naru");
+        homePage.setPassword("Narasimha@26");
 //        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.visibilityOf(homePage.loginError));
 //        Assert.assertEquals("The username and password could not be verified.", homePage.loginError.getText());
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void registerAccount()
     {
 
@@ -46,7 +46,7 @@ public class Tester1 extends CommonTest{
 
     }
 
-    @Test
+    @Test(enabled = false)
     public void leftMenulinks()
     {
         homePage.leftMenucontains("Services");
