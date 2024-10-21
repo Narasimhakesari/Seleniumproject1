@@ -64,11 +64,15 @@ public class HomePage {
         loginBtn.click();
     }
 
-    public void leftMenucontains()
+    public void leftMenucontains(String selectPage)
     {
         for(WebElement a: leftMenu)
         {
             System.out.println(a.getText());
+//            if(a.getText().equals(selectPage))
+//            {
+//                a.click();
+//            }
         }
     }
 

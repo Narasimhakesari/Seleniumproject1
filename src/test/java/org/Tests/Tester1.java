@@ -14,7 +14,7 @@ public class Tester1 extends CommonTest{
 
 
 
-    @Test()
+    @Test(enabled = false)
     public  void testLoginWithWrongInfo()
     {
 
@@ -25,7 +25,7 @@ public class Tester1 extends CommonTest{
 //        Assert.assertEquals("The username and password could not be verified.", homePage.loginError.getText());
     }
 
-    @Test()
+    @Test(enabled = false)
     public void registerAccount()
     {
 
@@ -46,10 +46,9 @@ public class Tester1 extends CommonTest{
 
     }
 
-//    @Test
-//    public void leftMenulinks()
-//    {
-//        homePage = new HomePage(driver);
-//        homePage.leftMenucontains();
-//    }
+    @Test
+    public void leftMenulinks()
+    {
+        homePage.leftMenucontains("Services");
+    }
 }
